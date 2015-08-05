@@ -20,13 +20,6 @@
 - I need to figure out deployment. Shouldn't be too difficult with Heroku...I hope!
 - I should maybe add more explanatory comments
 
-#### Things we are looking for
-
-- Clear, simple code
-- Explanatory comments for beginners
-- Consistent Naming Conventions
-- Valid HTML, CSS, and JavaScript
-
 #### Deliverables
 
 - Please send us back a link to a git repo with the completed code challenge. 
