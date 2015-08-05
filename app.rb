@@ -1,6 +1,4 @@
 require 'sinatra'
-require 'json' # Need to include the json helper
-require 'shotgun' # Not needed in production
 
 get '/' do # Missing do
   File.read('views/index.html') # Need to include the directory
