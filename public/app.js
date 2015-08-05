@@ -83,7 +83,7 @@
     var xhr = new XMLHttpRequest();
     xhr.open('post', '/favorites', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    var data = "name=" + encodeURI(result.Title) + "&oid=" + result.imdbID;
+    var data = 'name=' + encodeURI(result.Title) + '&oid=' + result.imdbID;
     xhr.send(data);
   };
 
@@ -100,7 +100,7 @@
   var showDetails = function(result) {
     // Lists movie details for the given result
 
-    var detailsElement = document.querySelector("#movie-details");
+    var detailsElement = document.querySelector('#movie-details');
 
     // Clears any previous details
     while (detailsElement.hasChildNodes()) {
@@ -114,7 +114,7 @@
       var img = document.createElement('img');
       img.src=result['Poster'];
       detailsElement.appendChild(img);
-      // Removing 'Poster' from JSON response so it doesn't end up in the following loop
+      // Removing 'Poster' from JSON response so it doesn't end up in the following for loop
       delete result['Poster'];
     }
 
