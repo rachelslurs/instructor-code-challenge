@@ -8,11 +8,11 @@
 
 #### If I had more time to work on this...
 
--Make favorites match the rest of the interface (this is an easy one)
--Currently results are only persistent in terms of stored JSON
--Figure out how to cross reference search results and already favorited movies (perhaps use LocalStorage?)
--Use an MVC to have better data binding support
--Be able to remove favorites
+- Make favorites match the rest of the interface (this is an easy one)
+- Currently results are only persistent in terms of stored JSON
+- Figure out how to cross reference search results and already favorited movies (perhaps use LocalStorage?)
+- Use an MVC to have better data binding support
+- Be able to remove favorites
 
 #### Back-end
 
