@@ -4,7 +4,7 @@
   document.querySelector('form').addEventListener('submit', function(event){
     // Event handler added to 'Search' button (identified by type='submit') to handle ajax request to the API
 
-    var movieList = document.querySelector('#movie-list')
+    var movieList = document.querySelector('#movie-list');
     // Clears any previous search results
     while (movieList.hasChildNodes()) {
       movieList.removeChild(movieList.lastChild);
@@ -13,7 +13,7 @@
     var input = document.querySelector('input').value;
     var xhr = new XMLHttpRequest();
     xhr.open('get', 'https://www.omdbapi.com/?s=' + encodeURIComponent(input) + '&r=json', true);
-    xhr.addEventListener('load', function(response){
+    xhr.addEventListener('load', function(){
       var results = JSON.parse(this.response).Search;
       for(var i = 0; i < results.length; i++){
         appendMovie(movieList, results[i]);
@@ -37,10 +37,11 @@
     divFavorite.className = 'large-4 columns';
     row.appendChild(divFavorite);
     row.appendChild(divTitle);
+    listItem.appendChild(row);
     divTitle.appendChild(createDetailsLink(result));
     divFavorite.appendChild(createFavoriteButton(result));
 
-    movieList.appendChild(row);
+    movieList.appendChild(listItem);
   };
 
   var createDetailsLink = function(result) {
@@ -92,7 +93,7 @@
 
     var xhr = new XMLHttpRequest();
     xhr.open('get', 'https://www.omdbapi.com/?i=' + encodeURIComponent(result.imdbID) + '&plot=full&r=json', true);
-    xhr.addEventListener('load', function(response){
+    xhr.addEventListener('load', function(){
       showDetails(JSON.parse(this.response));
     });
     xhr.send();
