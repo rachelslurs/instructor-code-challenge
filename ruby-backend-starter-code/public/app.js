@@ -4,13 +4,17 @@
   document.querySelector('form').addEventListener('submit', function(event){
     // Event handler added to 'Search' button (identified by type='submit') to handle ajax request to the API
 
+    var movieList = document.querySelector('#movie-list')
+    // Clears any previous search results
+    while (movieList.hasChildNodes()) {
+      movieList.removeChild(movieList.lastChild);
+    }
     event.preventDefault();
     var input = document.querySelector('input').value;
     var xhr = new XMLHttpRequest();
     xhr.open('get', 'http://www.omdbapi.com/?s=' + encodeURIComponent(input) + '&r=json', true);
     xhr.addEventListener('load', function(response){
       var results = JSON.parse(this.response).Search;
-      var movieList = document.querySelector('#movie-list')
       for(var i = 0; i < results.length; i++){
         appendMovie(movieList, results[i]);
       }
