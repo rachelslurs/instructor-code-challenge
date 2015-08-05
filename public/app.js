@@ -12,7 +12,7 @@
     event.preventDefault();
     var input = document.querySelector('input').value;
     var xhr = new XMLHttpRequest();
-    xhr.open('get', 'http://www.omdbapi.com/?s=' + encodeURIComponent(input) + '&r=json', true);
+    xhr.open('get', 'https://www.omdbapi.com/?s=' + encodeURIComponent(input) + '&r=json', true);
     xhr.addEventListener('load', function(response){
       var results = JSON.parse(this.response).Search;
       for(var i = 0; i < results.length; i++){
@@ -91,7 +91,7 @@
     // Fetches movie details from omdb for the selected movie
 
     var xhr = new XMLHttpRequest();
-    xhr.open('get', 'http://www.omdbapi.com/?i=' + encodeURIComponent(result.imdbID) + '&plot=full&r=json', true);
+    xhr.open('get', 'https://www.omdbapi.com/?i=' + encodeURIComponent(result.imdbID) + '&plot=full&r=json', true);
     xhr.addEventListener('load', function(response){
       showDetails(JSON.parse(this.response));
     });
