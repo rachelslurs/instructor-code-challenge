@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Favorite Movies</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
+	<style>
+		a.title {
+		    margin: 0 0 1.25rem;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    padding: 1rem 2rem 1.0625rem 2rem;
+		    font-size: 1rem;
+		}
+		h3 {
+
+		}
+		form, .panel, .results {
+			margin-top:30px;
+		}
+		input[type="text"], .button {
+			height: 3.125rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+    	<div class="large-12 columns panel">
+    		<h3>Movie Search</h3>
+    		<h4 class="subheader"><a href="/favorites">View Favorites</a> </h4>
+			<form>
+				<div class="row">
+				    <div class="large-9 columns">
+				      <input type="text"placeholder="Enter movie you'd like to search for" />
+				    </div>
+				    <div class="large-3 columns expand">
+						<button class="button expand" type="submit">Search</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-6 columns" id="movie-list">
+		</div>
+		<div class="large-6 columns" id="movie-details">
+		</div>
+	</div>
+	<script src="app.js"></script>
+
+</body>
+</html>
