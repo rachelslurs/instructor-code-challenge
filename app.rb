@@ -6,11 +6,9 @@ get '/' do # Missing do
   File.read('views/index.html') # Need to include the directory
 end
 
-#get '/search' do # for reaching omdbapi
-
 get '/favorites' do # Missing '/' to designate appropriate route
   response.header['Content-Type'] = 'application/json'
-  File.read('data.json') rescue [] # Handle if file is empty
+  File.read('data.json') rescue [] # Rescue handles if file is empty
 end
 
 post '/favorites' do # This needs to post to favorites
