@@ -11,7 +11,7 @@
 - Make favorites match the rest of the interface (this is an easy one)
 - Currently results are only persistent in terms of stored JSON
 - Figure out how to cross reference search results and already favorited movies (perhaps use LocalStorage?)
-- Use an MVC to have better data binding support
+- Use an MVC to have data binding support
 - Be able to remove favorites
 
 #### Back-end
