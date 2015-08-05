@@ -52,7 +52,7 @@
     detailsLink.innerText = result.Title;
     detailsLink.addEventListener('click', function() {
       // Adding the appropriate event listener to the anchor tag
-      showDetails(result);
+      getDetails(result);
     });
     return detailsLink;
   };
@@ -87,6 +87,16 @@
     xhr.send(data);
   };
 
+  var getDetails = function(result) {
+    // Fetches movie details from omdb for the selected movie
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'http://www.omdbapi.com/?i=' + encodeURIComponent(result.imdbID) + '&plot=full&r=json', true);
+    xhr.addEventListener('load', function(response){
+      showDetails(JSON.parse(this.response));
+    });
+    xhr.send();
+  };
   var showDetails = function(result) {
     // Lists movie details for the given result
 
@@ -97,9 +107,19 @@
       detailsElement.removeChild(detailsElement.lastChild);
     }
 
+    var info = document.createDocumentFragment();
+
+    // There is a 'Poster' attribute that we can use to make an image
+    if (result['Poster']) {
+      var img = document.createElement('img');
+      img.src=result['Poster'];
+      detailsElement.appendChild(img);
+      // Removing 'Poster' from JSON response so it doesn't end up in the following loop
+      delete result['Poster'];
+    }
+
     // Loops through details and creates DOM elements to display info
     for (var key in result) {
-      var info = document.createDocumentFragment();
       var dl = document.createElement('dl');
       var dt = document.createElement('dt');
       var dd = document.createElement('dd');
