@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'json'
 
 get '/' do # Missing do
   File.read('views/index.html') # Need to include the directory
