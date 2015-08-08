@@ -3,6 +3,4 @@ ruby '2.2.0'
 
 gem 'sinatra'
 
-group :development, :test do
-  gem 'jasmine'
-end
+gem 'jasmine', :group => [:development, :test]
