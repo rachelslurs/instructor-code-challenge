@@ -1,6 +1,6 @@
 // This syntax is an anonymous self invoked function, meaning it runs automatically
 (function() { 
-  var MovieApp = {
+  window.MovieApp = {
     favorite: 'Favorite it?',
 
     favorited: 'Favorited!',
