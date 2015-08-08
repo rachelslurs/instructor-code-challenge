@@ -29,7 +29,6 @@ describe('Make movie list', function() {
 		expect(window.MovieApp.createDetailsLink(result).outerHTML).toEqual(link);
 	});
 	it('should return the right details link', function() {
-		console.log(linkString);
-		expect(linkString).toEqual(link);
+		expect(window.MovieApp.createDetailsLink(result).outerHTML).toEqual(link);
 	});
 });
